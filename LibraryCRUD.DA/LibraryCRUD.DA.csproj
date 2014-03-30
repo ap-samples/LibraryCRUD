@@ -48,6 +48,10 @@
   <ItemGroup>
     <Compile Include="LibraryCRUDContext.cs" />
     <Compile Include="LibraryInitializer.cs" />
+    <Compile Include="Migrations\201403301816064_Initial.cs" />
+    <Compile Include="Migrations\201403301816064_Initial.Designer.cs">
+      <DependentUpon>201403301816064_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,6 +64,11 @@
       <Project>{43ab0a7c-05a7-487f-8d46-a6365524af6d}</Project>
       <Name>LibraryCRUD.BO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201403301816064_Initial.resx">
+      <DependentUpon>201403301816064_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
