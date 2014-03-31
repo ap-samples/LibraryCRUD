@@ -24,6 +24,19 @@ namespace LibraryCRUD.DA.Migrations
                         Id = c.Guid(nullable: false, identity: true),
                         Title = c.String(),
                         PublishDate = c.DateTime(nullable: false),
+                        Publisher_Id = c.Guid(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Publisher", t => t.Publisher_Id)
+                .Index(t => t.Publisher_Id);
+            
+            CreateTable(
+                "dbo.Publisher",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false, identity: true),
+                        Name = c.String(),
+                        FoundationDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -44,11 +57,14 @@ namespace LibraryCRUD.DA.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.Book", "Publisher_Id", "dbo.Publisher");
             DropForeignKey("dbo.BookAuthor", "Author_Id", "dbo.Author");
             DropForeignKey("dbo.BookAuthor", "Book_Id", "dbo.Book");
             DropIndex("dbo.BookAuthor", new[] { "Author_Id" });
             DropIndex("dbo.BookAuthor", new[] { "Book_Id" });
+            DropIndex("dbo.Book", new[] { "Publisher_Id" });
             DropTable("dbo.BookAuthor");
+            DropTable("dbo.Publisher");
             DropTable("dbo.Book");
             DropTable("dbo.Author");
         }

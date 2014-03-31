@@ -49,6 +49,7 @@
     <Compile Include="Entitites\Author.cs" />
     <Compile Include="Entitites\BaseEntity.cs" />
     <Compile Include="Entitites\Book.cs" />
+    <Compile Include="Entitites\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

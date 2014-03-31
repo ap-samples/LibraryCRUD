@@ -13,5 +13,7 @@ namespace LibraryCRUD.BO.Entitites
         public DateTime PublishDate { get; set; }
 
         public virtual ICollection<Author> Authors { get; set; }
+
+        public virtual Publisher Publisher { get; set; }
     }
 }
