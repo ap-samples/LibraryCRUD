@@ -10,6 +10,6 @@ namespace LibraryCRUD.BO.Entitites
     {
         public string Name { get; set; }
 
-        public DateTime FoundationDate { get; set; }
+        public DateTime? FoundationDate { get; set; }
     }
 }

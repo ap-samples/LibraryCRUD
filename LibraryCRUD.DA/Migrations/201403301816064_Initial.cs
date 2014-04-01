@@ -13,7 +13,7 @@ namespace LibraryCRUD.DA.Migrations
                     {
                         Id = c.Guid(nullable: false, identity: true),
                         FullName = c.String(),
-                        DateBorn = c.DateTime(nullable: false),
+                        DateBorn = c.DateTime(precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -23,7 +23,8 @@ namespace LibraryCRUD.DA.Migrations
                     {
                         Id = c.Guid(nullable: false, identity: true),
                         Title = c.String(),
-                        PublishDate = c.DateTime(nullable: false),
+                        PublishDate = c.DateTime(precision: 7, storeType: "datetime2"),
+                        Rarity = c.Int(nullable: false),
                         Publisher_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -36,7 +37,7 @@ namespace LibraryCRUD.DA.Migrations
                     {
                         Id = c.Guid(nullable: false, identity: true),
                         Name = c.String(),
-                        FoundationDate = c.DateTime(nullable: false),
+                        FoundationDate = c.DateTime(precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.Id);
             

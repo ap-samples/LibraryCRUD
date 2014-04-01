@@ -10,8 +10,7 @@ namespace LibraryCRUD.BO.Entitites
     {
         public string FullName { get; set; }
 
-        public DateTime DateBorn { get; set; }
-
+        public DateTime? DateBorn { get; set; }
 
         public virtual ICollection<Book> AutoredBooks { get; set; }
     }
